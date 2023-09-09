@@ -1,0 +1,51 @@
+<div class="col mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Editar Equipo</h3>
+        </div>
+        <div class="card-body">
+            <form action="/equipos/edit/{{equipoEdit.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <p>Equipo</p>
+                    <input type="text" name="equipo" class="form-control" value="{{equipoEdit.equipo}}">
+                </div>
+                <div class="form-group">
+                    <p>Pos 1</p>
+                    <input type="text" name="pos1" class="form-control" value="{{equipoEdit.pos1}}">
+                </div>
+                <div class="form-group">
+                    <p>Pos 2</p>
+                    <input type="text" name="pos2" class="form-control" value="{{equipoEdit.pos2}}">
+                </div>
+                <div class="form-group">
+                    <p>Pos 3</p>
+                    <input type="text" name="pos3" class="form-control" value="{{equipoEdit.pos3}}">
+                </div>
+                <div class="form-group">
+                    <p>Pos 4</p>
+                    <input type="text" name="pos4" class="form-control" value="{{equipoEdit.pos4}}">
+                </div>
+                <div class="form-group">
+                    <p>Pos 5</p>
+                    <input type="text" name="pos5" class="form-control" value="{{equipoEdit.pos5}}">
+                </div>
+                <div class="form-group">
+                    <p>Suplente 1</p>
+                    <input type="text" name="suplente1" class="form-control" value="{{equipoEdit.suplente1}}">
+                </div>
+                <div class="form-group">
+                    <p>Suplente 2</p>
+                    <input type="text" name="suplente2" class="form-control" value="{{equipoEdit.suplente2}}">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Save
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

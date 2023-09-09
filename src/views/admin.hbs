@@ -1,0 +1,43 @@
+<div class="table-wrapper">
+    <table class="table table-hover table-dark ">
+
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Equipo</th>
+                <th scope="col">Pos1</th>
+                <th scope="col">Pos2</th>
+                <th scope="col">Pos3</th>
+                <th scope="col">Pos4</th>
+                <th scope="col">Pos5</th>
+                <th scope="col">Suplente1</th>
+                <th scope="col">Suplente2</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{equipo}}</td>
+                <td>{{pos1}}</td>
+                <td>{{pos2}}</td>
+                <td>{{pos3}}</td>
+                <td>{{pos4}}</td>
+                <td>{{pos5}}</td>
+                <td>{{suplente1}}</td>
+                <td>{{suplente2}}</td>
+                <td><a href="equipos/edit/{{id}}" class="btn btn-success "><i class="fa fa-pencil"></i></a></td>
+                <td>
+                    <form action="/equipos/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-block btn-sn" onclick="return confirmacion()"><i
+                                class="fa fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

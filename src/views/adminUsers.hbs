@@ -1,0 +1,33 @@
+<table class="table table-hover table-dark">
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">User Role</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+            <td>{{userType}}</td>
+            <td><a href="users/edit/{{id}}" class="btn btn-success "><i class="fa fa-pencil"></i></a></td>
+            <td>
+                <form action="/equipos/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-block btn-sn"
+                        onclick="return confirmacion()"><i class="fa fa-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
