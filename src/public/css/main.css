@@ -24,8 +24,16 @@ body {
     left: 0;
 }
 
-.table-wrapper table thead th,
-.table-wrapper table tbody td {
+th{
+    position: -webkit-sticky;
+    /* Safari... */
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+}
+
+.table-wrapper table thead th{
     background-color: #343a40;
 }
 

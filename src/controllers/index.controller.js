@@ -57,6 +57,6 @@ indexCtrl.deleteEquipo = async (req, res) => {
 indexCtrl.deleteUser = async (req, res) => {
     await User.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'Usuario Eliminado Correctamente');
-    res.redirect('/adminUser')
+    res.redirect('/adminUsers')
 }
 module.exports = indexCtrl;
