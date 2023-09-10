@@ -87,6 +87,7 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     res.locals.user = req.user || null;
     res.locals.equipo = req.equipo || null;
+    res.locals.fecha = req.fecha || null;
     next();
 });
 
