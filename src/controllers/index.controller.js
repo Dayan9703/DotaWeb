@@ -8,7 +8,7 @@ indexCtrl.renderIndex = (req, res) => {
     res.render('index')
 };
 indexCtrl.renderAbout = (req, res) => {
-    res.render('about')
+    res.render('torneo')
 };
 
 indexCtrl.renderTerms = (req, res) => {
@@ -18,7 +18,7 @@ indexCtrl.renderTerms = (req, res) => {
 indexCtrl.renderAdmin = async (req, res) => {
     const equipo = req.equipo
     const data = await Equipo.find()
-    res.render('admin', { data });
+    res.render('adminequipos', { data });
 };
 
 indexCtrl.renderAdminUsers = async (req, res) => {
@@ -30,7 +30,13 @@ indexCtrl.renderAdminUsers = async (req, res) => {
 indexCtrl.renderAdminFechas = async (req, res) => {
     const fecha = req.fecha
     const data = await Fecha.find()
-    res.render('about', { data });
+    res.render('torneo', { data });
+};
+
+indexCtrl.renderAdminFechas2 = async (req, res) => {
+    const fecha = req.fecha
+    const data = await Fecha.find()
+    res.render('adminfechas', { data });
 };
 
 indexCtrl.renderEditFormEquipo = async (req, res) => {
@@ -41,7 +47,7 @@ indexCtrl.renderEditFormEquipo = async (req, res) => {
 indexCtrl.updateEquipo = async (req, res) => {
     const { equipo, pos1, pos2, pos3, pos4, pos5, suplente1, suplente2 } = req.body
     await Equipo.findByIdAndUpdate(req.params.id, { equipo, pos1, pos2, pos3, pos4, pos5, suplente1, suplente2 })
-    res.redirect('/admin')
+    res.redirect('/adminequipos')
 };
 
 indexCtrl.renderEditFormFecha = async (req, res) => {
@@ -52,7 +58,7 @@ indexCtrl.renderEditFormFecha = async (req, res) => {
 indexCtrl.updateFecha = async (req, res) => {
     const { fecha, equipo1, equipo2 } = req.body
     await Fecha.findByIdAndUpdate(req.params.id, { fecha, equipo1, equipo2 })
-    res.redirect('/about')
+    res.redirect('/torneo')
 };
 
 indexCtrl.renderEditForm = async (req, res) => {
@@ -69,13 +75,13 @@ indexCtrl.updateUser = async (req, res) => {
 indexCtrl.deleteEquipo = async (req, res) => {
     await Equipo.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'Equipo Eliminado Correctamente');
-    res.redirect('/admin')
+    res.redirect('/adminequipos')
 }
 
 indexCtrl.deleteFecha = async (req, res) => {
     await Fecha.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'Fecha Eliminada Correctamente');
-    res.redirect('/about')
+    res.redirect('/adminfechas')
 }
 
 indexCtrl.deleteUser = async (req, res) => {

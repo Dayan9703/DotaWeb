@@ -3,6 +3,7 @@ const { renderSignUpForm, signin, signup, renderSigninForm, logout } = require('
 const router = Router();
 const { isAuthenticated, isAdmin } = require('../helpers/auth');
 const { renderEditForm, updateUser, updateEquipo, renderEditFormEquipo, deleteEquipo, deleteUser, updateFecha, deleteFecha, renderEditFormFecha } = require('../controllers/index.controller');
+const { renderNewFechaForm, addFecha } = require('../controllers/fechas.controller');
 
 router.get('/users/signup', renderSignUpForm);
 router.post('/users/signup', signup);
@@ -10,18 +11,18 @@ router.post('/users/signup', signup);
 router.get('/users/signin', renderSigninForm);
 router.post('/users/signin', signin);
 
+router.get('/fechas/new-fecha', renderNewFechaForm);
+router.post('/fechas/new-fecha', addFecha);
+
 router.get('/users/logout', logout);
 
 router.get("/users/edit/:id", isAuthenticated, isAdmin, renderEditForm);
-
 router.put("/users/edit/:id", isAuthenticated, isAdmin, updateUser);
 
 router.get("/equipos/edit/:id", isAuthenticated, isAdmin, renderEditFormEquipo);
-
 router.put("/equipos/edit/:id", isAuthenticated, isAdmin, updateEquipo);
 
 router.get("/fechas/edit/:id", isAuthenticated, isAdmin, renderEditFormFecha);
-
 router.put("/fechas/edit/:id", isAuthenticated, isAdmin, updateFecha);
 
 router.delete('/equipos/delete/:id', isAuthenticated, isAdmin, deleteEquipo);

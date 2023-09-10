@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { renderAbout, renderIndex, renderTerms, renderAdmin, renderEditForm, updateUser, updateEquipo, renderEditFormEquipo, renderAdminUsers, renderEditFormFecha, updateFecha, renderAdminFechas } = require('../controllers/index.controller')
+const { renderAbout, renderIndex, renderTerms, renderAdmin, renderEditForm, updateUser, updateEquipo, renderEditFormEquipo, renderAdminUsers, renderEditFormFecha, updateFecha, renderAdminFechas, renderAdminFechas2 } = require('../controllers/index.controller')
 
 
 const { getItems, updateItem } = require('../controllers/users.db')
@@ -12,9 +12,11 @@ router.get('/', renderIndex);
 
 router.get('/terms', renderTerms);
 
-router.get('/about', renderAdminFechas);
+router.get('/torneo', renderAdminFechas);
 
-router.get('/admin', isAuthenticated, isAdmin, renderAdmin);
+router.get('/adminfechas', renderAdminFechas2);
+
+router.get('/adminequipos', isAuthenticated, isAdmin, renderAdmin);
 
 router.get('/adminUsers', isAuthenticated, isAdmin, renderAdminUsers);
 

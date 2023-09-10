@@ -1,15 +1,13 @@
-<td><a href="users/signup" class="btn btn-success ">Nuevo Usuario <i class="fa fa-plus-square"></i></a></td>
+<td><a href="fechas/new-fecha" class="btn btn-success ">Nueva Fecha <i class="fa fa-plus-square"></i></a></td>
 
 <div class="table-wrapper">
     <table class="table table-hover table-dark">
-
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-                <th scope="col">User Role</th>
+                <th scope="col">Fechas</th>
+                <th scope="col">Team1</th>
+                <th scope="col">Team2</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -18,20 +16,22 @@
             {{#each data}}
             <tr>
                 <th scope="row">{{@index}}</th>
-                <td>{{name}}</td>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{userType}}</td>
-                <td><a href="users/edit/{{id}}" class="btn btn-success "><i class="fa fa-pencil"></i></a></td>
+                <td>{{fecha}}</td>
+                <td>{{equipo1}}</td>
+                <td>{{equipo2}}</td>
+
+                <td><a href="fechas/edit/{{id}}" class="btn btn-success "><i class="fa fa-pencil"></i></a></td>
                 <td>
-                    <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
+                    <form action="/fechas/delete/{{_id}}?_method=DELETE" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-danger" onclick="return confirmacion()"><i
                                 class="fa fa-trash"></i></button>
                     </form>
                 </td>
+
             </tr>
             {{/each}}
+
         </tbody>
     </table>
 </div>

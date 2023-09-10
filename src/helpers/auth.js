@@ -17,7 +17,7 @@ helpers.isAdmin = (req, res, next) => {
         return next();
     }
     req.flash('error_msg', 'Not Authorized');
-    res.redirect('about');
+    res.redirect('torneo');
 }
 
 module.exports = helpers;

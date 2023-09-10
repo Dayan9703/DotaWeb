@@ -11,17 +11,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Bienvenidos</a>
                     </li>
-                    {{#ifCond this.userType '==' 'userA'}}
                     <li class="nav-item">
-                        <a class="nav-link" href="/about2">Torneos</a>
+                        <a class="nav-link" href="/torneo">Torneos</a>
                     </li>
-                    {{#ifCond this.name '!=' null}}
-                    {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">Torneos</a>
-                    </li>
-                    {{/ifCond}}
-                    {{/ifCond}}
 
                     {{#if user}}
                     <li class="nav-item">
@@ -34,16 +26,19 @@
                     {{#each user}}
                     {{#ifCond this.userType '==' 'userA'}}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/admin">Equipos</a>
+                        <a class="nav-link" aria-current="page" href="/adminequipos">Equipos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/adminUsers">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adminfechas">Fechas</a>
                     </li>
                     {{/ifCond}}
                     <li class="nav-item dropdown">
                         {{#ifCond this.name '!=' null}}
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-expanded="false">{{this.name}}</a>
+                            aria-expanded="false">{{this.name}} <i class="fa fa-user"></i></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/users/logout">Salir</a></li>
                         </ul>
