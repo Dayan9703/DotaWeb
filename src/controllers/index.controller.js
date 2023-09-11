@@ -58,7 +58,7 @@ indexCtrl.renderEditFormFecha = async (req, res) => {
 indexCtrl.updateFecha = async (req, res) => {
     const { fecha, equipo1, equipo2 } = req.body
     await Fecha.findByIdAndUpdate(req.params.id, { fecha, equipo1, equipo2 })
-    res.redirect('/torneo')
+    res.redirect('/adminfechas')
 };
 
 indexCtrl.renderEditForm = async (req, res) => {

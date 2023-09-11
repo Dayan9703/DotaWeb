@@ -4,6 +4,7 @@ const router = Router();
 const { isAuthenticated, isAdmin } = require('../helpers/auth');
 const { renderEditForm, updateUser, updateEquipo, renderEditFormEquipo, deleteEquipo, deleteUser, updateFecha, deleteFecha, renderEditFormFecha } = require('../controllers/index.controller');
 const { renderNewFechaForm, addFecha } = require('../controllers/fechas.controller');
+const { renderNewEquipoForm, addEquipo} = require('../controllers/equipos.controller')
 
 router.get('/users/signup', renderSignUpForm);
 router.post('/users/signup', signup);
@@ -13,6 +14,9 @@ router.post('/users/signin', signin);
 
 router.get('/fechas/new-fecha', renderNewFechaForm);
 router.post('/fechas/new-fecha', addFecha);
+
+router.get('/equipos/new-equipo', renderNewEquipoForm);
+router.post('/equipos/new-equipo', addEquipo);
 
 router.get('/users/logout', logout);
 

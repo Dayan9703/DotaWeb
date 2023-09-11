@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card text-center">
+            <div class="card-header">
+                <h3>Creación de equipo</h3>
+            </div>
+            <div class="card-body">
+                <form action="/equipos/new-equipo" method="POST" id="form" class="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="equipo" id="equipo"
+                            placeholder="Nombre del Equipo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pos1" id="pos1" placeholder="Posición 1, Medalla, ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pos2" id="pos2" placeholder="Posición 2, Medalla, ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pos3" id="pos3" placeholder="Posición 3, Medalla, ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pos4" id="pos4" placeholder="Posición 4, Medalla, ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="pos5" id="pos5" placeholder="Posición 5, Medalla, ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="suplente1" id="suplente1"
+                            placeholder="Suplente 1, Medalla, ID">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="suplente2" id="suplente2"
+                            placeholder="Suplente 2, Medalla, ID">
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="btn">Crear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
