@@ -26,6 +26,9 @@
                     {{#each user}}
                     {{#ifCond this.userType '==' 'userA'}}
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/notes">Noticias</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/adminequipos">Equipos</a>
                     </li>
                     <li class="nav-item">
@@ -54,7 +57,6 @@
                     </li>
                     {{/if}}
                 </ul>
-
             </div>
         </div>
     </div>

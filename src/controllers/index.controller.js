@@ -1,11 +1,13 @@
 const User = require("../models/User");
 const Equipo = require("../models/Equipo");
 const Fecha = require("../models/Fecha");
+const Note = require("../models/Note");
 
 const indexCtrl = {};
 
-indexCtrl.renderIndex = (req, res) => {
-    res.render('index')
+indexCtrl.renderIndex = async(req, res) => {
+    const notes = await Note.find();
+    res.render('index', {notes})
 };
 indexCtrl.renderAbout = (req, res) => {
     res.render('torneo')

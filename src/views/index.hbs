@@ -1,4 +1,28 @@
+<b3>BIENVENIDOS A</b3>
+<div class="container2">
+    <span style="--l: 'l';">COLISEUM &nbsp </span>
+    <span style="--l: '0!';">CHAMPIONS</span>
+
 <div class="">
-    <h4 class="text-center" style="center">Bienvenidos a nuestra pequeña comunidad de DotA2 en Cuba.</h4>
-    <img src="/img/FrontPage.jpg" alt="" class="mx-auto d-block m-4 responsive">
+
+    <img src="/img/FrontPage.jpg" alt="" class="mx-auto d-block m-4 responsive rounded-lg">
+
+</div>
+
+<div style="background: #343a40!important" class="rounded b2">
+    <b class="">Noticias</b>
+</div>
+<div class="row">
+    {{#each notes}}
+    <div1 class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}}
+                </h4>
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div1>
+    {{/each}}
 </div>
