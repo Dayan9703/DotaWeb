@@ -1,10 +1,21 @@
 <div style="background: #343a40!important" class="rounded b2">
     <b class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Torneo en proceso</b>
 </div>
+
+{{#ifCond user.userType '==' 'userA'}}
+<form action="/storage/" method="POST" enctype="multipart/form-data">
+    <div style="margin: 5px;">
+        <input type="file" name="calendario" class="btn btn-link">
+    </div>
+    <div style="margin: 5px;">
+        <input type="submit" value="Cambiar Calendario" class="btn btn-primary">
+    </div>
+</form>
+{{/ifCond}}
+
 <div class="container text-center">
-    <section class="div2 rounded row">
         <img src="/img/calendario.jpg" alt="" class="mx-auto d-block m-4 responsive">
-    </section>
+
 
     <section>
         <div class="table-wrapper">

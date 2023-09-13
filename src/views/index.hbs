@@ -3,10 +3,19 @@
     <span style="--l: 'l';">COLISEUM &nbsp </span>
     <span style="--l: '0!';">CHAMPIONS</span>
 
+{{#ifCond user.userType '==' 'userA'}}
+<form action="/storage2/" method="POST" enctype="multipart/form-data">
+    <div style="margin: 5px;">
+        <input type="file" name="calendario" class="btn btn-link">
+    </div>
+    <div style="margin: 5px;">
+        <input type="submit" value="Cambiar Calendario" class="btn btn-primary">
+    </div>
+</form>
+{{/ifCond}}
+
 <div class="">
-
-    <img src="/img/FrontPage.jpg" alt="" class="mx-auto d-block m-4 responsive rounded-lg">
-
+    <img src="/img/principal.jpg" alt="" class="mx-auto d-block m-4 responsive rounded-lg">
 </div>
 
 <div style="background: #343a40!important" class="rounded b2">

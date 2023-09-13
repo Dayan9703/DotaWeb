@@ -14,7 +14,7 @@ router.get('/terms', renderTerms);
 
 router.get('/torneo', renderAdminFechas);
 
-router.get('/adminfechas', renderAdminFechas2);
+router.get('/adminfechas', isAuthenticated, isAdmin, renderAdminFechas2);
 
 router.get('/adminequipos', isAuthenticated, isAdmin, renderAdmin);
 
