@@ -13,7 +13,6 @@ notesCtrl.createNewNote = async (req, res) => {
         title,
         description//es lo mismo con los dos puntos o solo
     });
-    newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Noticia Creada');
     res.redirect('/notes');
